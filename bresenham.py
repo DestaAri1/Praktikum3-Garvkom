@@ -13,12 +13,12 @@ def BRESENHAM(x1,y1,x2,y2):
     deltaX = abs(x2-x1)
     deltaY = abs(y2-y1)
 
-    #menghitung p, 
+    #menghitung p, 2dx dan 2(dy-dx)
     p = (2 * deltaY) - (deltaX)
     duadx = 2 * deltaX
     duaDyDx = 2 * (deltaY-deltaX) 
 
-    #Menentukan titik awal dan titim akhir
+    #Menentukan titik awal dan titik akhir
     if(x1>x2):
         x = x2
         y = y2
@@ -38,10 +38,10 @@ def BRESENHAM(x1,y1,x2,y2):
     glPointSize(10.0)
     #Memilih mode point
     glBegin(GL_POINTS)
-    glVertex2i(x,y)
 
-    #looping dari langkah ke 1 sampai langkah terakhir
+    #Looping pada saat nilai x1 < x2
     while x<xend:
+        #Menentukan titik yang akan diisi
         x +=1
         
         if(p<0):
@@ -53,6 +53,7 @@ def BRESENHAM(x1,y1,x2,y2):
             
         p += duaDyDx
         
+        #Menggambar pixel
         glVertex2i(x,y)  
     
     glEnd()
