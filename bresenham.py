@@ -6,7 +6,7 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
 
-def BRESENHAM(x1,x2,y1,y2):
+def BRESENHAM(x1,y1,x2,y2):
     #menentukan delta X dan delta Y
     x=x1
     y=y1
@@ -47,9 +47,9 @@ def BRESENHAM(x1,x2,y1,y2):
         if(p<0):
             p+=duady
         elif(y1>y2):
-            y+=1
-        else:
             y-=1
+        else:
+            y+=1
             
         p += duaDyDx
         
