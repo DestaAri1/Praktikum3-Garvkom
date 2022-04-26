@@ -13,9 +13,9 @@ def BRESENHAM(x1,y1,x2,y2):
     deltaX = abs(x2-x1)
     deltaY = abs(y2-y1)
 
-    #menghitung p
+    #menghitung p, 
     p = (2 * deltaY) - (deltaX)
-    duady = 2 * deltaY
+    duadx = 2 * deltaX
     duaDyDx = 2 * (deltaY-deltaX) 
 
     #Menentukan titik awal dan titim akhir
@@ -45,7 +45,7 @@ def BRESENHAM(x1,y1,x2,y2):
         x +=1
         
         if(p<0):
-            p+=duady
+            p+=duadx
         elif(y1>y2):
             y-=1
         else:
